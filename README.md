@@ -1,0 +1,2 @@
+# hospitalmanagement
+bachelor's degree
