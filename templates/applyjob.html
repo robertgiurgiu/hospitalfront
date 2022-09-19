@@ -1,0 +1,88 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% load static%}
+
+
+<link rel="stylesheet" href="{% static 'css/styleform.css' %}">
+<section class="ftco-section">
+  <div class="container">
+    
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="wrapper">
+          <div class="row no-gutters">
+            <div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
+              <div class="contact-wrap w-100 p-md-5 p-4">
+                <h3 class="mb-4">Apply for a job</h3>
+                <div id="form-message-warning" class="mb-4"></div> 
+                <div id="form-message-success" class="mb-4">
+                  Your message was sent, thank you!
+                </div>
+                <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="/send_email" enctype="multipart/form-data" autocomplete="off">
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="label" for="name">Full Name</label>
+                        <input type="text" class="form-control" name="full_name" placeholder="Name">
+                      </div>
+                    </div>
+                    <div class="col-md-6"> 
+                      <div class="form-group">
+                        <label class="label" for="email">Email Address</label>
+                        <input type="email" class="form-control" name="email"  placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="label" for="name">Position Applying</label>
+                        <input type="text" class="form-control" name="subject" placeholder="Position Applying">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="label" >Curriculum vitae</label>
+                        <input type="file" class="form-control" name="file" id="file" >
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="label" for="#">Letter of intent</label>
+                        <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="submit" value="Apply cv" class="btn btn-primary">
+                        <div class="submitting"></div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                {% for message in messages %}
+                    {% if message.tags == 'success' %}
+                      <div class="alert alert-primary text-center mt-3" role="alert">{{ message}}
+                        <a href="{% url 'applyjob' %}"></a>
+                      </div>
+
+                    {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-5 d-flex align-items-stretch ">
+              
+              <img src="{% static 'images/contact (2).jpg' %}" alt="sing in image" width="425px" height="560px">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br
+
+{% endblock %}

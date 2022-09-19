@@ -1,0 +1,78 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% load static%}
+
+
+<link rel="stylesheet" href="{% static 'css/styleform.css' %}">
+<section class="ftco-section">
+  <div class="container">
+    
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="wrapper">
+          <div class="row no-gutters">
+            <div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
+              <div class="contact-wrap w-100 p-md-5 p-4">
+                <br><br><br><br><br><br>
+                <h3 class="mb-4">Your message has been sent successfully. We'll respond to you shortly. Thank you!</h3>
+                <div id="form-message-warning" class="mb-4"></div> 
+                <div id="form-message-success" class="mb-4">
+                  Your message was sent, thank you!
+                </div>
+                <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="/send_mail" enctype="multipart/form-data" autocomplete="off">
+                 
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        
+                      </div>
+                    </div>
+                    <div class="col-md-6"> 
+                      <div class="form-group">
+                        
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                       
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <a href="{% url 'index'%}">
+                        <input type="text" value="HOME" class="btn btn-primary" >
+                        </a>
+                        <div class="submitting"></div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-5 d-flex align-items-stretch ">
+              
+              <img src="{% static 'images/contact (2).jpg' %}" alt="sing in image" width="425px" height="560px">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br
+
+{% endblock %}

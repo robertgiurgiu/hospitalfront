@@ -1,0 +1,19 @@
+Name:
+<br>{{ full_name }}
+
+<br><br>
+
+Email:
+<br>{{ email }}
+
+<br><br>
+
+Position Applying:
+<br>{{ subject }}
+
+<br><br>
+
+Letter of intent:
+<br>{{ message }}
+
+<br><br>
