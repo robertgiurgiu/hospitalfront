@@ -15,9 +15,7 @@
 
 ## ADMIN ACCOUNT
  ```
-    admin
-    Ktbffh1999 
-
+   
  ``` 
 
 ## OR YOU CAN CREATE ANOTHER BY RUNNING FOLLOWIN COMMANDS
